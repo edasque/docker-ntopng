@@ -20,12 +20,12 @@ libtool libnetfilter-conntrack3 libnuma1 dkms libpcap0.8 libmysqlclient18
 RUN curl -s --remote-name  http://packages.ntop.org/ubuntu/14.04/all/PF_RING-dkms/pfring-dkms_7.1.0_all.deb
 RUN dpkg -i pfring-dkms_7.1.0_all.deb
 
-RUN curl -s --remote-name http://packages.ntop.org/apt/14.04/x64/pfring_7.1.0-1506_amd64.deb
-RUN dpkg -i pfring_7.1.0-1506_amd64.deb
+RUN curl -s --remote-name http://packages.ntop.org/apt/14.04/x64/pfring_7.1.0-1507_amd64.deb
+RUN dpkg -i pfring_7.1.0-1507_amd64.deb
 
-RUN curl -s --remote-name http://packages.ntop.org/apt/14.04/x64/ntopng_3.1.171023-3615_amd64.deb
-RUN dpkg -i ntopng_3.1.171023-3615_amd64.deb
-RUN rm -rf ntopng_3.1.171023-3615_amd64.deb
+RUN curl -s --remote-name http://packages.ntop.org/apt/14.04/x64/ntopng_3.1.171024-3619_amd64.deb
+RUN dpkg -i ntopng_3.1.171024-3619_amd64.deb
+RUN rm -rf *.deb
 
 RUN apt-get -y -q install ntopng  
 
