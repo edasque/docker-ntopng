@@ -10,7 +10,8 @@ work in other context, obviously.
   Updated to ntopng 3.1.171023-3615
 * 10/24/17: Updated to ntopng 3.1.171024-3619
 * 12/21/17: Updated to ntopng 3.3.171221-3938
-  ## Install & Run
+* 07/03/18: Updated to ntopng 3.5.180703-4601
+## Install & Run
 
 ```
 docker run --net=host -t -p 3000:3000 edasque/docker-ntopng <ntopng arguments>
