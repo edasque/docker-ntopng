@@ -5,6 +5,7 @@ RUN apt-get update
 RUN apt-get -y -q install curl
 
 RUN apt-get update
+
 RUN apt-get -y -q install net-tools ethtool inetutils-ping git wget redis-server libglib2.0 libxml2-dev \
 libpcap-dev librrd-dev redis-server libsqlite3-dev \
 libglib2.0 libxml2-dev libpcap-dev rrdtool librrd-dev libsqlite3-dev libhiredis-dev libgeoip-dev \
@@ -14,18 +15,26 @@ libcurl3 logrotate \
 bridge-utils libzmq3-dev librdkafka1 libmysqlclient-dev  \
 libtool libnetfilter-conntrack3 libnuma1 dkms libpcap0.8 libmysqlclient18
 
-# RUN curl -s --remote-name http://packages.ntop.org/apt/14.04/all/apt-ntop.deb
-# RUN curl -s --remote-name http://packages.ntop.org/debian/jessie/x64/ntopng/ntopng_3.1.171022-3612_amd64.deb
-# 
+RUN apt-get update
 
-RUN curl -s --remote-name http://packages.ntop.org/apt/14.04/x64/pfring_7.3.0-2048_amd64.deb
-RUN dpkg -i pfring_7.3.0-2048_amd64.deb
+RUN apt-get -y -q install software-properties-common and python-software-properties
 
-RUN curl -s --remote-name  http://packages.ntop.org/ubuntu/14.04/all/PF_RING-dkms/pfring-dkms_7.3.0_all.deb
-RUN dpkg -i pfring-dkms_7.3.0_all.deb
+RUN add-apt-repository ppa:maxmind/ppa
 
-RUN curl -s --remote-name http://packages.ntop.org/apt/14.04/x64/ntopng_3.5.180703-4601_amd64.deb
-RUN dpkg -i ntopng_3.5.180703-4601_amd64.deb
+RUN apt install libmaxminddb0 libmaxminddb-dev mmdb-bin
+
+RUN curl -s --remote-name http://packages.ntop.org/apt/14.04/x64/ndpi_2.7.0-1458_amd64.deb
+RUN dpkg -i ndpi_2.7.0-1458_amd64.deb
+
+RUN curl -s --remote-name http://packages.ntop.org/apt/14.04/x64/pfring_7.5.0-2355_amd64.deb
+RUN dpkg -i pfring_7.5.0-2355_amd64.deb
+
+RUN curl -s --remote-name http://packages.ntop.org/apt/14.04/all/pfring-dkms_7.5.0_all.deb
+RUN dpkg -i pfring-dkms_7.5.0_all.deb
+
+RUN curl -s --remote-name http://packages.ntop.org/apt/14.04/x64/ntopng_3.9.181230-5856_amd64.deb
+RUN dpkg -i ntopng_3.9.181230-5856_amd64.deb
+
 RUN rm -rf *.deb
 
 RUN apt-get -y -q install ntopng  
