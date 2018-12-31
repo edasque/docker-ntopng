@@ -1,5 +1,6 @@
 FROM ubuntu:18.04
-MAINTAINER Erik Dasque
+
+LABEL maintainer="Erik Dasque"
 
 RUN apt-get update
 RUN apt-get -y -q install curl
