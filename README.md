@@ -11,6 +11,8 @@ work in other context, obviously.
 * 10/24/17: Updated to ntopng 3.1.171024-3619
 * 12/21/17: Updated to ntopng 3.3.171221-3938
 * 07/03/18: Updated to ntopng 3.5.180703-4601
+* 12/30/18: Updated to ntopng 3.9.181230-5856 & Ubumntu 18.04, regigerred dependencies
+
 ## Install & Run
 
 ```
